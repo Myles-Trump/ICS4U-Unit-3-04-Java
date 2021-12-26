@@ -24,6 +24,16 @@ final class Stack {
     public static final int C4 = 4;
 
     /**
+    * 5.
+    */
+    public static final int C5 = 5;
+
+    /**
+    * 6.
+    */
+    public static final int C6 = 6;
+
+    /**
     * Prevent instantiation.
     * Throw an exception IllegalStateException.
     * if this ever is called
@@ -45,13 +55,14 @@ final class Stack {
         MrCoxallStack stackVariable = new MrCoxallStack();
         int userChoice = 0;
 
-        while (userChoice != C4) {
+        while (userChoice != C6) {
             final Scanner userInput = new Scanner(System.in);
             try {
                 System.out.print("Would you like to (input 1) add an integer ");
                 System.out.print("to the stack, (input 2) remove an integer ");
                 System.out.print("from the stack, (input 3) check the stack,");
-                System.out.print(" or (input 4) exit?: ");
+                System.out.print(" (input 4) peek at the top integer, (input ");
+                System.out.print("5) clear the stack, or (input 6) exit?: ");
                 userChoice = userInput.nextInt();
 
                 switch (userChoice) {
@@ -64,15 +75,24 @@ final class Stack {
 
                     case 2:
                         stackVariable.pop();
-                        System.out.println("\nYou have removed an integer.");
                         break;
 
                     case C3:
-                        System.out.println("\n");
+                        System.out.print("\n");
                         stackVariable.showStack();
                         break;
 
                     case C4:
+                        System.out.print("\n");
+                        stackVariable.peek();
+                        break;
+
+                    case C5:
+                        stackVariable.clear();
+                        System.out.println("\nStack cleared!\n");
+                        break;
+
+                    case C6:
                         break;
 
                     default:

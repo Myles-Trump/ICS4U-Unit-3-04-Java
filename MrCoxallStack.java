@@ -23,7 +23,7 @@ public class MrCoxallStack {
     }
 
     /**
-    * The Pop() function removes integers from the stack.
+    * The pop() function removes integers from the stack.
     */
     public void pop() {
         if (stackAsArray.size() == 0) {
@@ -31,11 +31,33 @@ public class MrCoxallStack {
 
         } else {
             stackAsArray.remove(stackAsArray.size() - 1);
+            System.out.println("\nYou have removed an integer!");
         }
     }
 
     /**
-    * The ShowStack() function shows the user the array.
+    * The peek() function shows the user the top integer.
+    */
+    public void peek() {
+        if (stackAsArray.size() == 0) {
+            System.out.print("Cannot peek; there is no integers in the ");
+            System.out.println(" stack!");
+
+        } else {
+            System.out.println("The top integer is "
+                + stackAsArray.get(stackAsArray.size() - 1) + "\n");
+        }
+    }
+
+    /**
+    * The clear() function clears the array.
+    */
+    public void clear() {
+        stackAsArray.clear();
+    }
+
+    /**
+    * The showStack() function shows the user the array.
     */
     public void showStack() {
         System.out.println("All integers in array\n****");
